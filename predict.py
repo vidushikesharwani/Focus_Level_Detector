@@ -97,7 +97,7 @@ try:
     print("-" * 50)
 
     
-#Save this entry to weekly tracker CSV
+#Save this entry
     
     
     today = str(date.today())
