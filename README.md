@@ -2,7 +2,7 @@
 
 ## About the Project
 
-This project is based on a simple observation I had during my own study routine — sometimes I study for hours but still don’t feel productive, while other times even a short session feels focused.
+This project is based on a simple observation I had during my own study routine, Sometimes I study for hours but still don’t feel productive while other times even a short session feels focused.
 
 Instead of guessing the reason, I wanted to actually measure what affects focus. So I built a small machine learning model that predicts a student's focus level based on their daily habits.
 
@@ -13,7 +13,7 @@ Instead of guessing the reason, I wanted to actually measure what affects focus.
 The model takes a few basic inputs related to a student’s routine:
 
 * Study hours
-* Sleep hours
+* Sleep hour
 * Phone usage
 * Break time
 
@@ -21,7 +21,7 @@ Based on this, it predicts a **focus score out of 100**.
 
 Along with that, it also:
 
-* Classifies focus as Low / Medium / High
+* Classifies focus as Low/Medium/High
 * Gives simple suggestions to improve focus
 * Stores data to show how focus changes over time
 
@@ -29,22 +29,21 @@ Along with that, it also:
 
 ## Why I Chose This Problem
 
-As a student, I noticed that we often blame external things for lack of focus, but rarely look at our own habits like sleep or phone usage.
+As a student, I noticed that we often blame external things for lack of focus but rarely look at our own habits like sleep or phone usage.
 
 This project is an attempt to connect those daily habits with actual productivity in a simple and understandable way.
 
 ---
 
 ## Dataset
-
 I created the dataset myself instead of using any online dataset.
 
 The focus score was generated using a basic logic:
 
-* More sleep → better focus
-* More study hours → better focus
-* Too much phone usage → reduces focus
-* Balanced breaks → improve focus
+* More sleep - better focus
+* More study hours - better focus
+* Too much phone usage - reduces focus
+* Balanced breaks - improve focus
 
 I generated around 200 entries with a mix of:
 
@@ -69,7 +68,7 @@ I used two models and compared them:
 
 * More flexible but slightly less accurate here
 
-After testing, **Linear Regression performed better**, so I used it for final predictions.
+After testing, **Linear Regression performed better** so I used it for final predictions.
 
 ---
 ## Libraries Used
@@ -77,7 +76,7 @@ After testing, **Linear Regression performed better**, so I used it for final pr
 - pandas — data handling and CSV operations
 - numpy — numerical calculations and array operations
 - matplotlib — graph plotting
-- seaborn — statistical visualizations
+- seaborn — statistical visualisation
 - scikit-learn — machine learning models and evaluation metrics
 - pickle — saving and loading the trained model
 

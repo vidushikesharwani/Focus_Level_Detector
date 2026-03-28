@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# --- Load the dataset ---
+#Load the dataset
 df = pd.read_csv('data/student_focus_data.csv')
 
 print("Dataset loaded successfully!")
@@ -10,10 +10,8 @@ print(f"Shape: {df.shape}")
 
 sns.set_style("whitegrid")
 
-# ============================================================
-# GRAPH 1 → Bar Chart: Focus Level Distribution
+# GRAPH 1 - Bar Chart: Focus Level Distribution
 # Most important — shows your data is balanced
-# ============================================================
 plt.figure(figsize=(7, 5))
 
 counts = df['focus_level'].value_counts()
@@ -37,10 +35,9 @@ plt.savefig('data/graph1_focus_distribution.png')
 plt.show()
 print("Graph 1 saved!")
 
-# ============================================================
-# GRAPH 2 → Heatmap: Correlation between all features
+
+# GRAPH 2 - Heatmap: Correlation between all features
 # Most important — shows which habit matters most
-# ============================================================
 plt.figure(figsize=(7, 5))
 
 numeric_df = df[['study_hours', 'sleep_hours',
@@ -61,6 +58,6 @@ plt.savefig('data/graph2_heatmap.png')
 plt.show()
 print("Graph 2 saved!")
 
-print("\n" + "=" * 45)
+print("\n" + " =" * 45)
 print("   Both graphs created and saved!")
 print("=" * 45)

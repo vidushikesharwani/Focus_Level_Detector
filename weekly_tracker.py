@@ -9,19 +9,19 @@ from datetime import date
 try:
     df = pd.read_csv('data/weekly_tracker.csv')
 except FileNotFoundError:
-    print("❌ No tracking data found!")
-    print(" Run predict.py first to log some entries.")
+    print("No trackng data found!")
+    print("Run predict.py first to log some entries.")
     exit()
 
 print("=" * 50)
-print("   WEEKLY FOCUS TRACKER")
+print("WEEKLY FOCUS TRACKER")
 print("=" * 50)
 print(f"   Total entries logged: {len(df)}")
 print("=" * 50)
 
 
 # Show summary table
-print("\n📅 Your Focus Log:")
+print("\n Your Focus Log:")
 print("-" * 65)
 print(f"{'#':<4} {'Date':<14} {'Study':>6} {'Sleep':>6} "
       f"{'Phone':>6} {'Break':>6} {'Score':>7} {'Level':<10}")
@@ -48,29 +48,29 @@ print("-" * 65)
 
 #Weekly insights
 
-print("\n📊 Your Insights:")
+print("\n Your Insights:")
 avg_score = df['focus_score'].mean()
 best_day  = df.loc[df['focus_score'].idxmax()]
 worst_day = df.loc[df['focus_score'].idxmin()]
 
-print(f"  🏆 Best focus day  : {best_day['date']} "
+print(f" Best focus day  : {best_day['date']} "
       f"(Score: {best_day['focus_score']})")
-print(f"  📉 Worst focus day : {worst_day['date']} "
+print(f"   Worst focus day : {worst_day['date']} "
       f"(Score: {worst_day['focus_score']})")
-print(f"  📈 Average score   : {avg_score:.1f} / 100")
+print(f"  Average score   : {avg_score:.1f} / 100")
 
 if avg_score > 66:
-    print("  🟢 Overall: You have EXCELLENT focus habits!")
+    print("Overall: You have EXCELLENT focus habits!!")
 elif avg_score > 33:
-    print("  🟡 Overall: Your focus is AVERAGE. Keep improving!")
+    print(" Overall: Your focus is AVERAGE. Keep improving!!")
 else:
-    print("  🔴 Overall: Your focus needs SERIOUS improvement!")
+    print("Overall: Your focus needs SERIOUS improvement!!")
 
 
 #Graph 1: Focus score trend over time
 
 if len(df) < 2:
-    print("\n⚠️  Log at least 2 days to see trend graphs.")
+    print("\n Log at least 2 days to see trend graphs.")
     print("   Run predict.py again tomorrow with new values!")
 else:
     # Color each point by focus level
@@ -119,9 +119,9 @@ else:
     plt.tight_layout()
     plt.savefig('data/graph8_weekly_trend.png')
     plt.show()
-    print("\n✅ Weekly trend graph saved!")
+    print("\n Weekly trend graph saved!")
 
-    #Graph 2: Your habits radar/bar comparison
+    #Graph 2: Your habits radar
     plt.figure(figsize=(10, 5))
 
     x = np.arange(len(df))
@@ -148,7 +148,7 @@ else:
     plt.tight_layout()
     plt.savefig('data/graph9_habits_comparison.png')
     plt.show()
-    print("✅ Habits comparison graph saved!")
+    print("Habits comparison graph saved!")
 
 print("\n" + "=" * 50)
 print("   Keep logging daily to see your progress!")
